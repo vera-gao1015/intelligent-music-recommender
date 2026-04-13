@@ -50,24 +50,127 @@ def load_songs(csv_path: str) -> List[Dict]:
     Loads songs from a CSV file.
     Required by src/main.py
     """
-    # TODO: Implement CSV loading logic
-    print(f"Loading songs from {csv_path}...")
-    return []
+    import csv
+    songs = []
+    with open(csv_path, newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            # csv.DictReader reads every value as a string.
+            # Numeric fields must be cast so math operations work later.
+            songs.append({
+                "id":           int(row["id"]),       # integer
+                "title":        row["title"],          # string
+                "artist":       row["artist"],         # string
+                "genre":        row["genre"],          # string
+                "mood":         row["mood"],           # string
+                "energy":       float(row["energy"]),       # 0.0 – 1.0
+                "tempo_bpm":    float(row["tempo_bpm"]),    # 60 – 168
+                "valence":      float(row["valence"]),      # 0.0 – 1.0
+                "danceability": float(row["danceability"]), # 0.0 – 1.0
+                "acousticness": float(row["acousticness"]), # 0.0 – 1.0
+            })
+    return songs
+
+MOOD_NEIGHBORS = {
+    "chill":     {"relaxed", "focused"},
+    "relaxed":   {"chill", "focused"},
+    "focused":   {"chill", "relaxed"},
+    "happy":     {"energetic"},
+    "energetic": {"happy", "intense"},
+    "intense":   {"energetic"},
+}
+
+MOOD_TO_VALENCE = {
+    "happy":     0.80,
+    "energetic": 0.70,
+    "chill":     0.58,
+    "focused":   0.60,
+    "relaxed":   0.70,
+    "intense":   0.40,
+}
+
+RELATED_GENRES = {
+    "pop":        {"indie-pop", "dance-pop"},
+    "indie-pop":  {"pop"},
+    "dance-pop":  {"pop"},
+    "lofi":       {"ambient", "chillhop"},
+    "ambient":    {"lofi", "chillhop"},
+    "chillhop":   {"lofi", "ambient"},
+    "rock":       {"indie-rock", "alternative"},
+    "indie-rock": {"rock", "alternative"},
+    "alternative":{"rock", "indie-rock"},
+}
 
 def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
-    """
-    Scores a single song against user preferences.
-    Required by recommend_songs() and src/main.py
-    """
-    # TODO: Implement scoring logic using your Algorithm Recipe from Phase 2.
-    # Expected return format: (score, reasons)
-    return []
+    """Return a (0.0–1.0) score and a list of reason strings for one song."""
+    reasons = []
+
+    # Genre Score (35%)
+    user_genre = user_prefs.get("favorite_genre", "")
+    song_genre = song.get("genre", "")
+    if song_genre == user_genre:
+        genre_score = 1.0
+    elif song_genre in RELATED_GENRES.get(user_genre, set()):
+        genre_score = 0.5
+    else:
+        genre_score = 0.0
+
+    # Mood Score (25%)
+    user_mood = user_prefs.get("favorite_mood", "")
+    song_mood = song.get("mood", "")
+    if song_mood == user_mood:
+        mood_score = 1.0
+    elif song_mood in MOOD_NEIGHBORS.get(user_mood, set()):
+        mood_score = 0.5
+    else:
+        mood_score = 0.0
+
+    # Energy Score (20%)
+    target_energy = user_prefs.get("target_energy", 0.5)
+    energy_score = 1.0 - abs(song.get("energy", 0.5) - target_energy)
+
+    # Acoustic Score (10%)
+    acousticness = song.get("acousticness", 0.5)
+    if user_prefs.get("likes_acoustic", False):
+        acoustic_score = acousticness
+    else:
+        acoustic_score = 1.0 - acousticness
+
+    # Tempo Score (5%)
+    target_bpm = 60 + (target_energy * 108)
+    song_tempo_norm   = (song.get("tempo_bpm", 114) - 60) / 108
+    target_tempo_norm = (target_bpm - 60) / 108
+    tempo_score = 1.0 - abs(song_tempo_norm - target_tempo_norm)
+
+    # Valence Score (5%)
+    expected_valence = MOOD_TO_VALENCE.get(user_mood, 0.60)
+    valence_score = 1.0 - abs(song.get("valence", 0.5) - expected_valence)
+
+    # Weighted total
+    total_score = (
+          genre_score    * 0.35
+        + mood_score     * 0.25
+        + energy_score   * 0.20
+        + acoustic_score * 0.10
+        + tempo_score    * 0.05
+        + valence_score  * 0.05
+    )
+
+    # Reasons
+    if genre_score    >= 0.7: reasons.append("matches your favorite genre")
+    if mood_score     >= 0.7: reasons.append("matches your mood")
+    if energy_score   >= 0.7: reasons.append("energy level close to your preference")
+    if acoustic_score >= 0.7: reasons.append("fits your acoustic preference")
+    if tempo_score    >= 0.6: reasons.append("tempo matches your vibe")
+    if valence_score  >= 0.6: reasons.append("emotional tone aligns with your taste")
+
+    return (total_score, reasons)
 
 def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
-    """
-    Functional implementation of the recommendation logic.
-    Required by src/main.py
-    """
-    # TODO: Implement scoring and ranking logic
-    # Expected return format: (song_dict, score, explanation)
-    return []
+    """Score every song, then return the top k sorted by score descending."""
+    scored = [
+        (song, score, ", ".join(reasons) or "no specific reasons")
+        for song in songs
+        for score, reasons in [score_song(user_prefs, song)]
+    ]
+    return sorted(scored, key=lambda x: x[1], reverse=True)[:k]
