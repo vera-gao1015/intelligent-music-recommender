@@ -179,7 +179,7 @@ def run_agent(
     )
 
     retrieved_info = [
-        {"title": s["title"], "artist": s["artist"], "similarity": round(score, 3)}
+        {"title": s["title"], "artist": s["artist"], "match_score": f"{round(score, 3)} / 1.0"}
         for s, score in retrieved
     ]
 
@@ -194,7 +194,7 @@ def run_agent(
     if verbose:
         print(f"  Retrieved {len(retrieved)} candidates. Top 5:")
         for i, info in enumerate(retrieved_info[:5], 1):
-            print(f"    {i}. \"{info['title']}\" by {info['artist']} (similarity: {info['similarity']})")
+            print(f"    {i}. \"{info['title']}\" by {info['artist']} (match score: {info['match_score']})"  )
 
     # ── Step 4: LLM Generation ─────────────────────────────────────────
     if verbose:

@@ -15,6 +15,7 @@ This new version lets you just type what you feel — like "I'm tired and want t
 - **AI planning (Agent)** — An agent decides how to handle your request: are you looking for a specific mood? Exploring new genres? Comparing styles?
 - **Specialized behavior (Few-shot prompting)** — The LLM uses carefully designed examples to respond in a consistent, music-reviewer style
 - **Safety checks (Guardrails)** — The system validates your input and makes sure the AI doesn't make up fake songs
+- **Web UI (Streamlit)** — A chat-style interface where you type naturally and get recommendations in a conversation flow
 - **Auto testing** — 19 tests check that everything works correctly
 - **Bigger catalog** — 50 songs across 17 genres (up from 20)
 

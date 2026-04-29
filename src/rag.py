@@ -12,6 +12,7 @@ import os
 import json
 import numpy as np
 from typing import List, Dict, Tuple, Optional
+from urllib.parse import quote_plus
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -157,24 +158,25 @@ Rules:
 - Use a conversational, friendly tone.
 - Format your response as a numbered list.
 - If the user's request is vague, make reasonable inferences about what they might enjoy.
+- Include the YouTube link provided for each song so the user can listen to it.
 """
 
 FEW_SHOT_USER = """User request: "I need something chill to study to"
 
 Retrieved songs:
-1. "Midnight Coding" by LoRoom - lofi, chill, energy: 0.42, tempo: 78 BPM, acousticness: 0.71
-2. "Focus Flow" by LoRoom - lofi, focused, energy: 0.40, tempo: 80 BPM, acousticness: 0.78
-3. "Library Rain" by Paper Lanterns - lofi, chill, energy: 0.35, tempo: 72 BPM, acousticness: 0.86
+1. "Midnight Coding" by LoRoom - lofi, chill, energy: 0.42, tempo: 78 BPM, acousticness: 0.71 | [YouTube](https://www.youtube.com/results?search_query=LoRoom+Midnight+Coding)
+2. "Focus Flow" by LoRoom - lofi, focused, energy: 0.40, tempo: 80 BPM, acousticness: 0.78 | [YouTube](https://www.youtube.com/results?search_query=LoRoom+Focus+Flow)
+3. "Library Rain" by Paper Lanterns - lofi, chill, energy: 0.35, tempo: 72 BPM, acousticness: 0.86 | [YouTube](https://www.youtube.com/results?search_query=Paper+Lanterns+Library+Rain)
 
 Recommend top 3 songs."""
 
 FEW_SHOT_ASSISTANT = """Here are my top 3 picks for your study session:
 
-1. **"Focus Flow" by LoRoom** - This lofi track is literally built for concentration. With a focused mood, low energy (0.40), and a steady 80 BPM tempo, it creates the perfect background for deep work without being distracting.
+1. **"Focus Flow" by LoRoom** — This lofi track is literally built for concentration. With a focused mood, low energy (0.40), and a steady 80 BPM tempo, it creates the perfect background for deep work without being distracting. [Listen on YouTube](https://www.youtube.com/results?search_query=LoRoom+Focus+Flow)
 
-2. **"Library Rain" by Paper Lanterns** - The high acousticness (0.86) and gentle 72 BPM tempo make this feel like a cozy library session. Its chill vibe will keep you relaxed while you power through your notes.
+2. **"Library Rain" by Paper Lanterns** — The high acousticness (0.86) and gentle 72 BPM tempo make this feel like a cozy library session. Its chill vibe will keep you relaxed while you power through your notes. [Listen on YouTube](https://www.youtube.com/results?search_query=Paper+Lanterns+Library+Rain)
 
-3. **"Midnight Coding" by LoRoom** - Another great lofi option with a chill mood and moderate acousticness (0.71). The slightly higher energy (0.42) compared to the others gives you just enough momentum to stay productive."""
+3. **"Midnight Coding" by LoRoom** — Another great lofi option with a chill mood and moderate acousticness (0.71). The slightly higher energy (0.42) compared to the others gives you just enough momentum to stay productive. [Listen on YouTube](https://www.youtube.com/results?search_query=LoRoom+Midnight+Coding)"""
 
 
 def generate_recommendation(
@@ -196,12 +198,15 @@ def generate_recommendation(
     # Format retrieved songs for the prompt
     song_descriptions = []
     for i, (song, sim_score) in enumerate(retrieved_songs, 1):
+        yt_query = quote_plus(f'{song["artist"]} {song["title"]}')
+        yt_link = f'https://www.youtube.com/results?search_query={yt_query}'
         desc = (
             f'{i}. "{song["title"]}" by {song["artist"]} - '
             f'{song["genre"]}, {song["mood"]}, '
             f'energy: {song["energy"]:.2f}, tempo: {song["tempo_bpm"]} BPM, '
             f'acousticness: {song["acousticness"]:.2f} '
-            f'(relevance: {sim_score:.3f})'
+            f'(relevance: {sim_score:.3f}) '
+            f'| [YouTube]({yt_link})'
         )
         song_descriptions.append(desc)
 
