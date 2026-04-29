@@ -8,8 +8,6 @@ Runs the system against multiple predefined test inputs and checks:
 4. Guardrails catch issues properly
 5. End-to-end consistency across runs
 
-Usage:
-    python3 -m eval.evaluate
 """
 
 import sys
