@@ -154,4 +154,5 @@ For a deeper look at AI collaboration, biases, and ethical considerations, see [
 
 ## Demo
 
-> *TODO: Add Loom video link here*
+https://drive.google.com/file/d/1a0dF-LgMs6Jhb4GPVSde2SczQLmAfjAa/view?usp=drive_link
+
