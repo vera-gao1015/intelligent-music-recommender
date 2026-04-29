@@ -91,3 +91,271 @@
 2026-04-28 22:02:38,549 [INFO] Quality check passed
 2026-04-28 22:02:38,550 [INFO] All guardrail checks PASSED
 2026-04-28 22:11:19,633 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 22:48:14,217 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 22:48:16,320 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 22:48:17,384 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 22:48:22,277 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 22:48:24,046 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 22:48:24,052 [INFO] Running guardrail checks...
+2026-04-28 22:48:24,052 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 22:48:24,052 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 22:48:24,052 [INFO] Quality check passed
+2026-04-28 22:48:24,053 [INFO] All guardrail checks PASSED
+2026-04-28 22:50:01,039 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 22:50:02,298 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 22:50:03,535 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 22:50:10,536 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 22:50:11,668 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 22:50:11,678 [INFO] Running guardrail checks...
+2026-04-28 22:50:11,678 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 22:50:11,678 [WARNING] Output verification: hallucinated song "Night Drive Loop"
+2026-04-28 22:50:11,678 [WARNING] Output verification: hallucinated song "Groove Machine"
+2026-04-28 22:50:11,678 [WARNING] Output verification found 2 issue(s)
+2026-04-28 22:50:11,678 [INFO] Quality check passed
+2026-04-28 22:50:11,678 [WARNING] Some guardrail checks FAILED - see report for details
+2026-04-28 22:55:37,269 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 22:55:38,740 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 22:55:39,281 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 22:55:45,760 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 22:55:46,134 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 22:55:46,144 [INFO] Running guardrail checks...
+2026-04-28 22:55:46,144 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 22:55:46,144 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 22:55:46,144 [INFO] Quality check passed
+2026-04-28 22:55:46,145 [INFO] All guardrail checks PASSED
+2026-04-28 22:55:59,470 [INFO] Input validated: "What's the difference between lofi and rock vibes?..."
+2026-04-28 22:56:00,335 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 22:56:00,751 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 22:56:07,350 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 22:56:07,513 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 22:56:07,523 [INFO] Running guardrail checks...
+2026-04-28 22:56:07,523 [INFO] Input validated: "What's the difference between lofi and rock vibes?..."
+2026-04-28 22:56:07,523 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 22:56:07,523 [INFO] Quality check passed
+2026-04-28 22:56:07,523 [INFO] All guardrail checks PASSED
+2026-04-28 23:03:29,259 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 23:03:31,017 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:03:31,630 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:03:39,722 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:03:41,051 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:03:41,061 [INFO] Running guardrail checks...
+2026-04-28 23:03:41,061 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 23:03:41,061 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:03:41,062 [INFO] Quality check passed
+2026-04-28 23:03:41,062 [INFO] All guardrail checks PASSED
+2026-04-28 23:04:57,623 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 23:04:59,079 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:04:59,499 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:05:08,606 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:05:08,911 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:05:08,920 [INFO] Running guardrail checks...
+2026-04-28 23:05:08,921 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 23:05:08,921 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:05:08,921 [INFO] Quality check passed
+2026-04-28 23:05:08,921 [INFO] All guardrail checks PASSED
+2026-04-28 23:05:49,505 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:06:42,252 [INFO] Input validated: "I want some chill music..."
+2026-04-28 23:06:42,253 [INFO] Input validated: "Give me upbeat songs for running..."
+2026-04-28 23:06:42,253 [INFO] Input validated: "jazz..."
+2026-04-28 23:06:42,253 [WARNING] Input validation failed: empty query
+2026-04-28 23:06:42,253 [WARNING] Input validation failed: empty query
+2026-04-28 23:06:42,253 [WARNING] Input validation failed: too short (1 chars)
+2026-04-28 23:06:42,253 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:06:42,253 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:06:42,253 [WARNING] Input validation failed: too long (501 chars)
+2026-04-28 23:06:43,779 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:06:44,804 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:06:45,790 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:06:47,077 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:06:48,347 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:06:48,554 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:06:48,700 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:06:49,372 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:06:56,546 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:06:56,551 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:06:56,551 [INFO] Quality check passed
+2026-04-28 23:06:56,945 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:07:01,730 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:07:01,731 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:07:01,732 [INFO] Quality check passed
+2026-04-28 23:07:02,037 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:07:09,111 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:07:09,112 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:07:09,112 [INFO] Quality check passed
+2026-04-28 23:15:13,289 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 23:15:15,034 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:15:15,642 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:15:22,956 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:15:23,334 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:15:23,343 [INFO] Running guardrail checks...
+2026-04-28 23:15:23,344 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 23:15:23,344 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:15:23,344 [INFO] Quality check passed
+2026-04-28 23:15:23,344 [INFO] All guardrail checks PASSED
+2026-04-28 23:16:39,228 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 23:16:40,787 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:16:41,362 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:16:56,310 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:16:57,349 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:16:57,355 [INFO] Running guardrail checks...
+2026-04-28 23:16:57,355 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 23:16:57,355 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:16:57,355 [INFO] Quality check passed
+2026-04-28 23:16:57,355 [INFO] All guardrail checks PASSED
+2026-04-28 23:17:45,229 [INFO] Input validated: "What's the difference between lofi and rock vibes?..."
+2026-04-28 23:17:46,544 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:17:46,886 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:17:53,358 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:17:53,664 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:17:53,674 [INFO] Running guardrail checks...
+2026-04-28 23:17:53,674 [INFO] Input validated: "What's the difference between lofi and rock vibes?..."
+2026-04-28 23:17:53,675 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:17:53,675 [INFO] Quality check passed
+2026-04-28 23:17:53,675 [INFO] All guardrail checks PASSED
+2026-04-28 23:18:30,791 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:19:00,837 [INFO] Input validated: "I want some chill music..."
+2026-04-28 23:19:00,838 [INFO] Input validated: "Give me upbeat songs for running..."
+2026-04-28 23:19:00,839 [INFO] Input validated: "jazz..."
+2026-04-28 23:19:00,839 [WARNING] Input validation failed: empty query
+2026-04-28 23:19:00,839 [WARNING] Input validation failed: empty query
+2026-04-28 23:19:00,839 [WARNING] Input validation failed: too short (1 chars)
+2026-04-28 23:19:00,839 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:19:00,839 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:19:00,839 [WARNING] Input validation failed: too long (501 chars)
+2026-04-28 23:19:01,853 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:19:02,970 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:19:04,517 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:19:05,762 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:19:06,362 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:19:06,874 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:19:07,000 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:19:07,152 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:19:12,812 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:19:12,815 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:19:12,815 [INFO] Quality check passed
+2026-04-28 23:19:13,207 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:19:18,444 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:19:18,447 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:19:18,447 [INFO] Quality check passed
+2026-04-28 23:19:18,808 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:19:24,770 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:19:24,773 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:19:24,773 [INFO] Quality check passed
+2026-04-28 23:26:07,600 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 23:26:09,282 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:26:12,128 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:26:16,368 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:26:16,600 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:26:16,610 [INFO] Running guardrail checks...
+2026-04-28 23:26:16,611 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 23:26:16,611 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:26:16,611 [INFO] Quality check passed
+2026-04-28 23:26:16,611 [INFO] All guardrail checks PASSED
+2026-04-28 23:27:20,438 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 23:27:22,811 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:27:23,186 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:27:32,357 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:27:32,518 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:27:32,528 [INFO] Running guardrail checks...
+2026-04-28 23:27:32,528 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 23:27:32,528 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:27:32,528 [INFO] Quality check passed
+2026-04-28 23:27:32,528 [INFO] All guardrail checks PASSED
+2026-04-28 23:28:02,714 [INFO] Input validated: "What's the difference between lofi and rock vibes?..."
+2026-04-28 23:28:03,962 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:28:04,259 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:28:12,814 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:28:14,112 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:28:14,121 [INFO] Running guardrail checks...
+2026-04-28 23:28:14,121 [INFO] Input validated: "What's the difference between lofi and rock vibes?..."
+2026-04-28 23:28:14,121 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:28:14,121 [INFO] Quality check passed
+2026-04-28 23:28:14,121 [INFO] All guardrail checks PASSED
+2026-04-28 23:28:50,431 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:29:38,061 [INFO] Input validated: "I want some chill music..."
+2026-04-28 23:29:38,062 [INFO] Input validated: "Give me upbeat songs for running..."
+2026-04-28 23:29:38,062 [INFO] Input validated: "jazz..."
+2026-04-28 23:29:38,062 [WARNING] Input validation failed: empty query
+2026-04-28 23:29:38,062 [WARNING] Input validation failed: empty query
+2026-04-28 23:29:38,062 [WARNING] Input validation failed: too short (1 chars)
+2026-04-28 23:29:38,062 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:29:38,062 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:29:38,062 [WARNING] Input validation failed: too long (501 chars)
+2026-04-28 23:29:39,205 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:29:40,338 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:29:41,243 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:29:42,309 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:29:43,214 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:29:43,631 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:29:43,814 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:29:44,012 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:29:48,869 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:29:48,871 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:29:48,872 [INFO] Quality check passed
+2026-04-28 23:29:49,013 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:29:53,285 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:29:53,286 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:29:53,287 [INFO] Quality check passed
+2026-04-28 23:29:53,951 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:29:59,120 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:29:59,120 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:29:59,120 [INFO] Quality check passed
+2026-04-28 23:37:51,523 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 23:37:53,087 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:37:53,525 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:37:57,899 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:37:58,080 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:37:58,095 [INFO] Running guardrail checks...
+2026-04-28 23:37:58,095 [INFO] Input validated: "I'm feeling tired after work and want to relax..."
+2026-04-28 23:37:58,096 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:37:58,096 [INFO] Quality check passed
+2026-04-28 23:37:58,096 [INFO] All guardrail checks PASSED
+2026-04-28 23:38:55,840 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 23:38:57,258 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:38:58,522 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:39:07,325 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:39:07,744 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:39:07,755 [INFO] Running guardrail checks...
+2026-04-28 23:39:07,755 [INFO] Input validated: "I want to discover genres I've never tried..."
+2026-04-28 23:39:07,756 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:39:07,756 [INFO] Quality check passed
+2026-04-28 23:39:07,756 [INFO] All guardrail checks PASSED
+2026-04-28 23:39:38,784 [INFO] Input validated: "What's the difference between lofi and rock vibes?..."
+2026-04-28 23:39:39,704 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:39:39,977 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:39:47,334 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:39:47,574 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:39:47,584 [INFO] Running guardrail checks...
+2026-04-28 23:39:47,585 [INFO] Input validated: "What's the difference between lofi and rock vibes?..."
+2026-04-28 23:39:47,585 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:39:47,585 [INFO] Quality check passed
+2026-04-28 23:39:47,585 [INFO] All guardrail checks PASSED
+2026-04-28 23:40:07,289 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:40:43,425 [INFO] Input validated: "I want some chill music..."
+2026-04-28 23:40:43,425 [INFO] Input validated: "Give me upbeat songs for running..."
+2026-04-28 23:40:43,425 [INFO] Input validated: "jazz..."
+2026-04-28 23:40:43,425 [WARNING] Input validation failed: empty query
+2026-04-28 23:40:43,425 [WARNING] Input validation failed: empty query
+2026-04-28 23:40:43,425 [WARNING] Input validation failed: too short (1 chars)
+2026-04-28 23:40:43,425 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:40:43,425 [WARNING] Input validation failed: blocked pattern detected
+2026-04-28 23:40:43,425 [WARNING] Input validation failed: too long (501 chars)
+2026-04-28 23:40:44,948 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:40:46,045 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:40:47,067 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:40:49,227 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:40:50,274 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:40:50,756 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:40:51,167 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:40:51,578 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:40:57,004 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:40:57,006 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:40:57,006 [INFO] Quality check passed
+2026-04-28 23:40:57,218 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:41:02,195 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:41:02,198 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:41:02,198 [INFO] Quality check passed
+2026-04-28 23:41:02,431 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-04-28 23:41:07,896 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-28 23:41:07,906 [INFO] Output verification passed: all songs are from retrieved results
+2026-04-28 23:41:07,906 [INFO] Quality check passed

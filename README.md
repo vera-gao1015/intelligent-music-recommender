@@ -52,7 +52,12 @@ OPENAI_API_KEY=paste-your-key-here
 
 ## How to Run
 
-**Start the recommender:**
+**Start the web UI:**
+```bash
+streamlit run app.py
+```
+
+**Start the CLI version:**
 ```bash
 python3 -m src.main
 ```

@@ -186,9 +186,13 @@ if query := st.chat_input(f"What kind of music are you looking for, {st.session_
             with st.expander("🔍 Agent Workflow", expanded=False):
                 st.markdown(agent_steps_html, unsafe_allow_html=True)
 
-            # Guardrail report
-            retrieved = retrieve_songs(query, songs, embeddings, top_k=10)
-            report = run_guardrails(query, result["recommendation"], retrieved)
+            # Guardrail report — use same retrieve_k as agent strategy
+            strategy_k = {"recommend": 10, "explore": 15, "compare": 15}
+            top_k = strategy_k.get(result.get("intent", "recommend"), 10)
+            retrieved = retrieve_songs(query, songs, embeddings, top_k=top_k)
+            expected_count = {"recommend": 3, "explore": 5, "compare": 4}
+            k = expected_count.get(result.get("intent", "recommend"), 3)
+            report = run_guardrails(query, result["recommendation"], retrieved, expected_count=k)
 
             def badge(label, passed):
                 cls = "badge-pass" if passed else "badge-fail"
