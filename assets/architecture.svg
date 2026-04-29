@@ -1,0 +1,162 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+  <title>Intelligent Music Recommender - System Architecture</title>
+  <style>
+    .box { rx: 8; ry: 8; stroke-width: 1.5; }
+    .input-box { fill: #dbeafe; stroke: #2563eb; }
+    .process-box { fill: #fef3c7; stroke: #d97706; }
+    .rag-box { fill: #d1fae5; stroke: #059669; }
+    .guard-box { fill: #fce7f3; stroke: #db2777; }
+    .data-box { fill: #f3e8ff; stroke: #7c3aed; }
+    .output-box { fill: #dbeafe; stroke: #2563eb; }
+    .label { font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700; }
+    .sublabel { font-family: system-ui, sans-serif; font-size: 9.5px; fill: #6b7280; }
+    .arrow { stroke: #9ca3af; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .arrow-label { font-family: system-ui, sans-serif; font-size: 8.5px; fill: #6b7280; }
+    .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: 700; fill: #1f2937; }
+    .zone-label { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; fill: #9ca3af; letter-spacing: 1px; }
+    .zone-bg { rx: 10; ry: 10; fill: none; stroke: #e5e7eb; stroke-width: 1; stroke-dasharray: 6,3; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#9ca3af" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="420" fill="#ffffff" />
+
+  <!-- Title -->
+  <text x="450" y="25" text-anchor="middle" class="title">Intelligent Music Recommender — System Architecture</text>
+
+  <!-- Zone: INPUT -->
+  <rect x="15" y="40" width="145" height="370" class="zone-bg" />
+  <text x="87" y="60" text-anchor="middle" class="zone-label">INPUT</text>
+
+  <!-- Zone: PROCESS -->
+  <rect x="175" y="40" width="500" height="370" class="zone-bg" />
+  <text x="425" y="60" text-anchor="middle" class="zone-label">PROCESS</text>
+
+  <!-- Zone: OUTPUT -->
+  <rect x="690" y="40" width="195" height="370" class="zone-bg" />
+  <text x="787" y="60" text-anchor="middle" class="zone-label">OUTPUT</text>
+
+  <!-- ====== INPUT ZONE ====== -->
+
+  <!-- User Input -->
+  <rect x="30" y="80" width="115" height="55" class="box input-box" />
+  <text x="87" y="103" text-anchor="middle" class="label" fill="#2563eb">User Input</text>
+  <text x="87" y="120" text-anchor="middle" class="sublabel">Natural language</text>
+
+  <!-- Song Database -->
+  <rect x="30" y="170" width="115" height="55" class="box data-box" />
+  <text x="87" y="193" text-anchor="middle" class="label" fill="#7c3aed">Song Database</text>
+  <text x="87" y="210" text-anchor="middle" class="sublabel">50 songs (CSV)</text>
+
+  <!-- Embeddings Cache -->
+  <rect x="30" y="260" width="115" height="55" class="box data-box" />
+  <text x="87" y="283" text-anchor="middle" class="label" fill="#7c3aed">Embeddings</text>
+  <text x="87" y="300" text-anchor="middle" class="sublabel">Vector cache (JSON)</text>
+
+  <!-- OpenAI API -->
+  <rect x="30" y="350" width="115" height="45" class="box data-box" />
+  <text x="87" y="377" text-anchor="middle" class="label" fill="#7c3aed">OpenAI API</text>
+
+  <!-- ====== PROCESS ZONE ====== -->
+
+  <!-- Input Guardrail -->
+  <rect x="190" y="80" width="130" height="55" class="box guard-box" />
+  <text x="255" y="103" text-anchor="middle" class="label" fill="#db2777">Input Guardrail</text>
+  <text x="255" y="120" text-anchor="middle" class="sublabel">Validate + block injection</text>
+
+  <!-- Arrow: User → Input Guardrail -->
+  <path d="M145,107 L190,107" class="arrow" />
+
+  <!-- Agent -->
+  <rect x="340" y="75" width="140" height="65" class="box process-box" />
+  <text x="410" y="97" text-anchor="middle" class="label" fill="#d97706">Agent (Planner)</text>
+  <text x="410" y="112" text-anchor="middle" class="sublabel">1. Classify intent</text>
+  <text x="410" y="125" text-anchor="middle" class="sublabel">2. Select strategy</text>
+
+  <!-- Arrow: Input Guardrail → Agent -->
+  <path d="M320,107 L340,107" class="arrow" />
+  <text x="330" y="100" text-anchor="middle" class="arrow-label">valid</text>
+
+  <!-- Arrow: OpenAI → Agent -->
+  <path d="M145,370 L370,370 L370,140" class="arrow" />
+  <text x="260" y="363" text-anchor="middle" class="arrow-label">GPT-4o-mini</text>
+
+  <!-- RAG Retrieval -->
+  <rect x="340" y="175" width="140" height="65" class="box rag-box" />
+  <text x="410" y="198" text-anchor="middle" class="label" fill="#059669">RAG Retrieval</text>
+  <text x="410" y="215" text-anchor="middle" class="sublabel">Cosine similarity</text>
+  <text x="410" y="228" text-anchor="middle" class="sublabel">Top-K candidates</text>
+
+  <!-- Arrow: Agent → RAG -->
+  <path d="M410,140 L410,175" class="arrow" />
+  <text x="425" y="160" class="arrow-label">strategy</text>
+
+  <!-- Arrow: Song DB → RAG -->
+  <path d="M145,197 L340,197" class="arrow" />
+  <text x="240" y="190" text-anchor="middle" class="arrow-label">song data</text>
+
+  <!-- Arrow: Embeddings → RAG -->
+  <path d="M145,285 L300,285 L300,225 L340,225" class="arrow" />
+  <text x="220" y="278" text-anchor="middle" class="arrow-label">vectors</text>
+
+  <!-- LLM Generation -->
+  <rect x="340" y="275" width="140" height="65" class="box rag-box" />
+  <text x="410" y="298" text-anchor="middle" class="label" fill="#059669">LLM Generation</text>
+  <text x="410" y="315" text-anchor="middle" class="sublabel">Few-shot prompting</text>
+  <text x="410" y="328" text-anchor="middle" class="sublabel">Personalized reasons</text>
+
+  <!-- Arrow: RAG → LLM -->
+  <path d="M410,240 L410,275" class="arrow" />
+  <text x="430" y="260" class="arrow-label">candidates</text>
+
+  <!-- Output Guardrail -->
+  <rect x="510" y="175" width="145" height="65" class="box guard-box" />
+  <text x="582" y="195" text-anchor="middle" class="label" fill="#db2777">Output Guardrail</text>
+  <text x="582" y="212" text-anchor="middle" class="sublabel">Anti-hallucination check</text>
+  <text x="582" y="225" text-anchor="middle" class="sublabel">Quality verification</text>
+
+  <!-- Arrow: LLM → Output Guardrail -->
+  <path d="M480,307 L545,307 L545,240" class="arrow" />
+  <text x="520" y="300" text-anchor="middle" class="arrow-label">response</text>
+
+  <!-- Logger -->
+  <rect x="510" y="280" width="145" height="45" class="box guard-box" />
+  <text x="582" y="300" text-anchor="middle" class="label" fill="#db2777">Logger</text>
+  <text x="582" y="315" text-anchor="middle" class="sublabel">system.log (all steps)</text>
+
+  <!-- Arrow: Output Guardrail → Logger -->
+  <path d="M582,240 L582,280" class="arrow" />
+
+  <!-- Eval Script -->
+  <rect x="510" y="355" width="145" height="45" class="box process-box" />
+  <text x="582" y="375" text-anchor="middle" class="label" fill="#d97706">Eval Script</text>
+  <text x="582" y="390" text-anchor="middle" class="sublabel">19 automated tests</text>
+
+  <!-- Arrow: Logger → Eval -->
+  <path d="M582,325 L582,355" class="arrow" />
+
+  <!-- ====== OUTPUT ZONE ====== -->
+
+  <!-- Final Output -->
+  <rect x="710" y="80" width="155" height="65" class="box output-box" />
+  <text x="787" y="103" text-anchor="middle" class="label" fill="#2563eb">Recommendations</text>
+  <text x="787" y="118" text-anchor="middle" class="sublabel">Ranked songs + reasons</text>
+  <text x="787" y="131" text-anchor="middle" class="sublabel">Guardrail report</text>
+
+  <!-- Arrow: Output Guardrail → Final Output -->
+  <path d="M655,200 L710,200 L710,145" class="arrow" />
+  <text x="680" y="193" text-anchor="middle" class="arrow-label">verified</text>
+
+  <!-- Human Review -->
+  <rect x="710" y="185" width="155" height="55" class="box output-box" />
+  <text x="787" y="208" text-anchor="middle" class="label" fill="#2563eb">Human Review</text>
+  <text x="787" y="225" text-anchor="middle" class="sublabel">User checks results</text>
+
+  <!-- Arrow: Final Output → Human -->
+  <path d="M787,145 L787,185" class="arrow" />
+
+</svg>

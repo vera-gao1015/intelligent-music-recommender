@@ -132,7 +132,7 @@ RELATED_GENRES = {
 }
 
 def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
-    """Return a (0.0–1.0) score and a list of reason strings for one song."""
+    """Return a (0.0-1.0) score and a list of reason strings for one song."""
     reasons = []
 
     # Genre Score (35%)

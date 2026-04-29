@@ -19,3 +19,33 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 18,Broken Neon,Veda Souls,soul,sad,0.43,74,0.33,0.48,0.79
 19,Groove Machine,Funky Dept.,funk,playful,0.84,112,0.85,0.89,0.14
 20,Glass Garden,Echo Pale,dream pop,dreamy,0.38,102,0.62,0.52,0.55
+21,Electric Carnival,Max Pulse,edm,euphoric,0.92,138,0.86,0.91,0.04
+22,Quiet Hours,Paper Lanterns,ambient,relaxed,0.25,64,0.68,0.35,0.94
+23,Golden Mile,Indigo Parade,pop,uplifting,0.78,122,0.83,0.80,0.25
+24,Late Night Ramen,LoRoom,lofi,nostalgic,0.38,76,0.52,0.55,0.80
+25,Thunder Road,Voltline,rock,energetic,0.88,148,0.55,0.70,0.08
+26,Silk & Honey,Sable & June,r&b,romantic,0.58,92,0.78,0.72,0.50
+27,Concrete Jungle,MeloDrop,hip hop,intense,0.72,96,0.42,0.78,0.15
+28,Autumn Letters,Clara Voss,classical,nostalgic,0.20,62,0.35,0.25,0.96
+29,Bassline Prophet,Funky Dept.,funk,energetic,0.86,116,0.82,0.90,0.12
+30,Starfall,Orbit Bloom,ambient,dreamy,0.30,66,0.60,0.38,0.90
+31,Highway Hymn,The Hollows,country,uplifting,0.52,104,0.72,0.58,0.78
+32,Pixel Hearts,NXGEN,synthwave,happy,0.80,120,0.75,0.77,0.18
+33,Rainy Jazz Cafe,Slow Stereo,jazz,chill,0.33,82,0.65,0.50,0.91
+34,Burn Bright,Shatter Flux,metal,intense,0.95,162,0.28,0.55,0.05
+35,Island Time,Coastal Fire,reggae,relaxed,0.50,84,0.80,0.65,0.65
+36,Phantom Groove,Veda Souls,soul,moody,0.48,78,0.40,0.52,0.72
+37,Neon Skyline,Neon Echo,pop,energetic,0.85,128,0.80,0.84,0.15
+38,Deep Focus,LoRoom,lofi,focused,0.36,74,0.55,0.57,0.82
+39,Velvet Thunder,Voltline,rock,angry,0.93,156,0.35,0.62,0.07
+40,Cherry Blossom Walk,Echo Pale,dream pop,romantic,0.42,98,0.70,0.48,0.60
+41,Sunset Boulevard,Indigo Parade,indie pop,nostalgic,0.65,108,0.72,0.70,0.40
+42,Digital Monsoon,NXGEN,edm,intense,0.90,142,0.45,0.88,0.03
+43,Porch Swing Blues,The Hollows,country,melancholy,0.40,88,0.38,0.45,0.85
+44,Moonlit Waltz,Clara Voss,classical,romantic,0.18,56,0.42,0.22,0.98
+45,Street Lights,MeloDrop,hip hop,moody,0.62,94,0.44,0.74,0.20
+46,Morning Dew,Slow Stereo,jazz,happy,0.45,100,0.78,0.55,0.87
+47,Wildfire,Max Pulse,pop,intense,0.90,134,0.72,0.86,0.06
+48,Floating World,Orbit Bloom,ambient,dreamy,0.22,58,0.58,0.32,0.95
+49,Funk District,Funky Dept.,funk,playful,0.82,114,0.88,0.92,0.10
+50,Echoes of You,Sable & June,soul,sad,0.40,70,0.30,0.44,0.75
